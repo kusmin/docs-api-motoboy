@@ -17,9 +17,17 @@ O preço estabelecido é de **R$ 40/hora**. Aqui está o detalhamento das horas 
 - Análise da API atual: **2h**
 - Revisão de cada endpoint (16 endpoints): **16h**
 
-### 3. Desenvolvimento de Novas Funcionalidades
+### 3. Novas Features
 
-- Implementação da lógica da funcionalidades de viagem com aceitação de até 4 viagens simultâneas por motoboy: **16h**
+#### Desenvolvimento e Implementação das corridas
+
+- Correção, validação e implementação das corridas, podendo pedir, aceitar e finalizar as corridas solicitadas: **8h**
+- Implementação da condição de poder aceitar ate 4 corridas simultanea: **4h**
+- Implementação da logica de prioridades das corridas, verificando primeiro pelo trajeto, depois por proximidades e favoritos: **6h**
+
+#### Implementação de favoritos
+
+- Criação de funcionalidade para que a loja posso favoritar os motoristas: **3h**
 
 ### 4. Testes e Validação
 
@@ -36,7 +44,7 @@ O preço estabelecido é de **R$ 40/hora**. Aqui está o detalhamento das horas 
 
 ## Total de Horas e Custo
 
-O total de horas estimado para o projeto é de **48 horas**. Portanto, o custo total do projeto, a um preço de R$ 40/hora, seria de **R$ 1.760**. Com a migração para o NestJs seria mais **R$ 320**.
+O total de horas estimado para o projeto é de **50 horas**. Portanto, o custo total do projeto, a um preço de R$ 40/hora, seria de **R$ 2.000**. Com a migração para o NestJs seria mais **R$ 320**.
 
 ## Cronograma Previsto
 
