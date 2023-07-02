@@ -1,0 +1,123 @@
+@startuml
+
+class Address {
+  +id: INTEGER
+  +complement: STRING
+  +street: STRING
+  +number: STRING
+  +district: STRING
+  +city: STRING
+  +uf: STRING
+  +cep: STRING
+  +lat: STRING
+  +lng: STRING
+  +name: STRING
+}
+
+class Business {
+  +percent: DOUBLE
+  +kmAmount: DOUBLE
+}
+
+class Deliveryman {
+  +name: STRING
+  +last_name: STRING
+  +photo: STRING
+  +cpf_cnpj: STRING
+  +email: STRING
+  +userId: STRING
+  +phone: STRING
+  +whatsapp: STRING
+}
+
+class Location {
+  +lat: STRING
+  +lng: STRING
+  +direction: STRING
+  +online: BOOLEAN
+  +visible: BOOLEAN
+  +userId: STRING
+  +socketId: STRING
+}
+
+class Message {
+  +message: STRING
+  +read: BOOLEAN
+}
+
+class Order {
+  +id: INTEGER
+  +recipient: STRING
+  +delivery_tax: DOUBLE
+  +tax: DOUBLE
+  +payment_type: ENUM
+  +status: ENUM
+  +comment: STRING
+  +qtd: INTEGER
+  +distance: BIGINT
+}
+
+class Route {
+  +id: INTEGER
+  +street: STRING
+  +number: STRING
+  +district: STRING
+  +complement: STRING
+  +city: STRING
+  +uf: STRING
+  +cep: STRING
+  +lat: DOUBLE
+  +lng: DOUBLE
+  +name: STRING
+  +position: INTEGER
+  +complete: BOOLEAN
+  +completedAt: DATE
+}
+
+class Store {
+  +name: STRING
+  +last_name: STRING
+  +store_name: STRING
+  +photo: STRING
+  +cpf_cnpj: STRING
+  +email: STRING
+  +userId: STRING
+  +phone: STRING
+  +whatsapp: STRING
+}
+
+class User {
+  +id: STRING
+  +email: STRING
+  +phone: STRING
+  +password: STRING
+  +type: ENUM
+  +socketId: STRING
+}
+
+class Vehicle {
+  +id: INTEGER
+  +type: ENUM
+  +color: STRING
+  +license_plate: STRING
+  +manufacturer: STRING
+}
+
+' Associations
+Deliveryman --|> User: belongsTo
+Deliveryman --|> Vehicle: hasOne
+Deliveryman --|> Location: hasOne
+Message --|> User: belongsTo
+Message --|> Chat: belongsTo
+Order --|> Deliveryman: belongsTo
+Order --|> Store: belongsTo
+Order --|> Chat: hasOne
+Order --|> Route: hasMany
+Store --|> User: belongsTo
+Store --|> Order: hasMany
+User --|> Address: hasMany
+User --|> Location: hasOne
+User --|> Store: hasOne
+User --|> Deliveryman: hasOne
+
+@enduml
